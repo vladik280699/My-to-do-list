@@ -1,3 +1,27 @@
+.task{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  &__text{
+  }
+  &__btn{
+    border-radius: 100%;
+    background-color: transparent;
+    border: 0;
+    color: #73747b;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    &:hover{
+      font-weight: bold;
+    }
+  }
+  &:hover{
+    background-color: #f7f7f7;
+  }
+}
+
 .completed{
   text-decoration: line-through;
 }

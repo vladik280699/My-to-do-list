@@ -1,0 +1,33 @@
+.footer{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  &__count{
+    color: #73747b;
+  }
+}
+
+.filters{
+
+  &__btn{
+    padding: 5px 15px;
+    background-color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid #00bcd4;
+    transition: .5s;
+    font-weight: bold;
+
+    &_first{
+    border-radius: 10px 0 0 10px;
+    }
+    &_last{
+      border-radius: 0 10px 10px 0;
+    }
+
+    &:hover{
+      background-color: #00bcd4;
+      color: #ffffff;
+    }
+  }
+}

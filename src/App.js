@@ -1,17 +1,20 @@
 import React from 'react';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import TaskCreatorContainer from './components/TaskCreator/TaskCreatorContainer';
-import TasksContainer from './components/Tasks/TasksListContainer';
+import TasksListContainer from './components/TasksList/TasksListContainer';
+import FooterContainer from './components/Footer/FooterContainer';
+import "./App.scss";
 
 const App = () => {
 
     return (
-        <div>
-            <Header/>
-            <TaskCreatorContainer/>
-            <TasksContainer/>
-            <Footer/>
+        <div className="app-wrapper">
+            <div className="app">
+                <Header/>
+                <TaskCreatorContainer/>
+                <TasksListContainer/>
+                <FooterContainer/>
+            </div>
         </div>
     );
 };

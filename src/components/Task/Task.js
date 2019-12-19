@@ -1,5 +1,6 @@
 import React from 'react';
-import {store, deleteTask, toggleStatusTask} from '../../store/store';
+import {store} from '../../store/store';
+import {deleteTask, toggleStatusTask} from '../../store/action-creators';
 import './Task.scss';
 
 const Task = ({id, text, completed}) => {
@@ -9,8 +10,8 @@ const Task = ({id, text, completed}) => {
   const handleToggleStatusTask = () => {
     store.dispatch(toggleStatusTask(id, completed));
   }
-  return(<div>
-      <span key={id} onClick={handleToggleStatusTask} className={completed? 'completed': ""}>{text}</span><button onClick={handleDeleteTask}>x</button>
+  return(<div className="task">
+      <span key={id} onClick={handleToggleStatusTask} className={`task__text ${completed? "completed": ""}`}>{text}</span><button className="task__btn" onClick={handleDeleteTask}>x</button>
     </div>);
 };
 

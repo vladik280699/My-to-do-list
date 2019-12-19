@@ -1,5 +1,5 @@
 import React from 'react';
-import {createTask} from '../../store/store';
+import {createTask} from '../../store/action-creators';
 import { connect } from 'react-redux';
 import TaskCreator from './TaskCreator';
 

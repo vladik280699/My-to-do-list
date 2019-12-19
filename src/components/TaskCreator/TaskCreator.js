@@ -1,4 +1,5 @@
 import React from 'react';
+import './TaskCreator.scss';
 
 class TaskCreator extends React.Component {
   state = {
@@ -10,23 +11,25 @@ class TaskCreator extends React.Component {
       })
 
   }
-  handleCreateTask(){
-
-    const id = new Date().getTime();
-    const text = this.state.textTask;
-    this.props.createTask(id, text);
-    this.setState({
-      textTask: ""
-    })
+  handleCreateTask(e){
+    e.preventDefault();
+    if(this.state.textTask){
+      const id = new Date().getTime();
+      const text = this.state.textTask;
+      this.props.createTask(id, text);
+      this.setState({
+        textTask: ""
+      })
+    }
     
   }
 
     render() {
         return (
-            <div>
-                <input placeholder="task" value={this.state.textTask} onChange={this.typeText.bind(this)}/>
-                <button onClick={this.handleCreateTask.bind(this)}>add</button>
-            </div>
+            <form className="form">
+                <input className="form__input" placeholder="add a new task" value={this.state.textTask} onChange={this.typeText.bind(this)}/>
+                <button className="form__button" type="submit" onClick={this.handleCreateTask.bind(this)}>add</button>
+            </form>
         );
     }
 };

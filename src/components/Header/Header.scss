@@ -1,0 +1,11 @@
+.header{
+  background-color: #0097a7;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px 10px 0 0;
+  &__title{
+    margin: 0;
+    text-transform: uppercase;
+    color: white;
+  }
+}
