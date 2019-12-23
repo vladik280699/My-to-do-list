@@ -1,4 +1,4 @@
-import {createStore, combineReducers} from "redux";
+import {createStore} from "redux";
 import {taskReducer} from './reducers/task-reducer';
 import {initialState} from './initial-state';
 

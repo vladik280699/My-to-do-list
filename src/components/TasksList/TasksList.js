@@ -1,6 +1,6 @@
 import React from 'react';
-import Task from '../Task/Task';
 import './TasksList.scss'
+import TaskContainer from '../Task/TaskContainer';
 
 const TasksList = ({tasks, visibilityFilter}) => {
   let filteredTasks = tasks;
@@ -12,7 +12,7 @@ const TasksList = ({tasks, visibilityFilter}) => {
     filteredTasks = tasks;
   }
   return(<div className="tasks-list"> 
-    { filteredTasks.map(t=>(<Task id={t.id} text={t.text} completed={t.completed}/>)) }
+    { filteredTasks.map(t=>(<TaskContainer id={t.id} text={t.text} completed={t.completed}/>)) }
     </div>);
 };
 
