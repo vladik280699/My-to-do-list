@@ -1,9 +1,6 @@
 import React from 'react';
 import './Footer.scss'
-
-const SHOW_ALL = "SHOW_ALL";
-const SHOW_ACTIVE = "SHOW_ACTIVE";
-const SHOW_COMPLETED = "SHOW_COMPLETED";
+import {SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED} from '../../store/actions';
 
 
 const Footer = ({count, setVisibilityFilter}) => {

@@ -2,17 +2,10 @@ import React from 'react';
 import './TasksList.scss'
 import TaskContainer from '../Task/TaskContainer';
 
-const TasksList = ({tasks, visibilityFilter}) => {
-  let filteredTasks = tasks;
-  if(visibilityFilter === "SHOW_ACTIVE"){
-    filteredTasks = tasks.filter(t => !t.completed);
-  } else if(visibilityFilter === "SHOW_COMPLETED"){
-    filteredTasks = tasks.filter(t => t.completed);
-  } else {
-    filteredTasks = tasks;
-  }
+const TasksList = ({filteredTasks}) => {
+
   return(<div className="tasks-list"> 
-    { filteredTasks.map(t=>(<TaskContainer id={t.id} text={t.text} completed={t.completed}/>)) }
+    { filteredTasks.map(t=>(<TaskContainer key={t.id}  id={t.id} text={t.text} completed={t.completed}/>)) }
     </div>);
 };
 

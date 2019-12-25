@@ -1,37 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TaskCreator.scss';
 
-class TaskCreator extends React.Component {
-  state = {
-    textTask: ""
-  }
-  typeText(e){
-      this.setState({
-        textTask: e.currentTarget.value
-      })
+const TaskCreator = ({createTask}) => {
 
+  let [textTask, setTextTask] = useState("");
+
+  const typeText = (e) => {
+      setTextTask(e.currentTarget.value);
   }
-  handleCreateTask(e){
+
+  const handleCreateTask = (e) => {
     e.preventDefault();
-    if(this.state.textTask){
+    if(textTask){
       const id = new Date().getTime();
-      const text = this.state.textTask;
-      this.props.createTask(id, text);
-      this.setState({
-        textTask: ""
-      })
+      createTask(id, textTask);
+      setTextTask("");
     }
-    
   }
-
-    render() {
         return (
             <form className="form">
-                <input className="form__input" placeholder="add a new task" value={this.state.textTask} onChange={this.typeText.bind(this)}/>
-                <button className="form__button" type="submit" onClick={this.handleCreateTask.bind(this)}>add</button>
+                <input className="form__input" placeholder="add a new task" value={textTask} onChange={typeText}/>
+                <button className="form__button" type="submit" onClick={handleCreateTask}>add</button>
             </form>
         );
-    }
 };
 
 export default TaskCreator;

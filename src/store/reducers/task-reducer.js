@@ -6,11 +6,11 @@ export const taskReducer = (state = initialState, action) => {
     case CREATE_TASK:
       return {
         ...state,
-        tasks: [...state.tasks,{
+        tasks: [{
           id: action.id,
           text: action.text,
           completed: false
-        }]
+        }, ...state.tasks]
       }
     case DELETE_TASK:
       return {

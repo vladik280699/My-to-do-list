@@ -1,11 +1,10 @@
 import TasksList from './TasksList';
 import { connect } from 'react-redux';
-import { getTasks, getVisibilityFilter } from '../../store/selectors';
+import { getFilteredTasks } from '../../store/selectors';
 
 const mapStateToProps = (state) => {
   return {
-    tasks: getTasks(state),
-    visibilityFilter: getVisibilityFilter(state)
+    filteredTasks: getFilteredTasks(state)
   };
 };
 
